@@ -22,7 +22,7 @@ namespace _4G
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent(); //Tobi war hier
         }
     }
 }
