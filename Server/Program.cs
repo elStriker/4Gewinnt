@@ -14,8 +14,8 @@ namespace Server
     {
         static void Main(string[] args)
         {
-            TcpClient cu;
-            TcpClient sq;
+            TcpClient player;
+            TcpClient player2;
             var localEndp = new IPEndPoint(IPAddress.Loopback, 9898);
             TcpListener listener = new TcpListener(localEndp);
             listener.Start();
@@ -23,10 +23,10 @@ namespace Server
             Console.WriteLine("Server gestartet");
             while (true)
             {
-                using (sq = listener.AcceptTcpClient())
+                using (player2 = listener.AcceptTcpClient())
                 {
-                    using (cu = listener.AcceptTcpClient())
-                        Send_Rec(cu, sq);
+                    using (player = listener.AcceptTcpClient())
+                        Send_Rec(player, player2);
                 }
             }
         }
