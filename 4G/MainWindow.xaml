@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Button x:Name="btn_send" Content="Send" HorizontalAlignment="Left" Margin="118,70,0,0" VerticalAlignment="Top" Width="108" Height="27" Click="btn_send_Click"/>
+        <TextBox x:Name="tbx_eingabe" HorizontalAlignment="Left" Height="27" Margin="273,70,0,0" TextWrapping="Wrap" Text="String eingeben..." VerticalAlignment="Top" Width="120"/>
+
     </Grid>
 </Window>
