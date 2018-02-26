@@ -53,9 +53,17 @@ namespace _4G
                     bool enabled = Convert.ToBoolean(teile[1]);
                     btn_send.IsEnabled = enabled;
                 }
-
-
             }
+        }
+
+        private void b_player_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void b_player2_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
