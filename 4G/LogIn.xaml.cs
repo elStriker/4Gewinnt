@@ -62,17 +62,13 @@ namespace _4G
                 if (OpenConnection() == true)
                 {
                     MySqlCommand cmd = new MySqlCommand(query, conn);
-                    MySqlDataReader reader = cmd.ExecuteReader();
-                    if (reader.Read())
+                    try
                     {
-                        reader.Close();
-                        conn.Close();
+                        cmd.ExecuteNonQuery();
                         return true;
                     }
-                    else
+                    catch (Exception)
                     {
-                        reader.Close();
-                        conn.Close();
                         return false;
                     }
                 }
