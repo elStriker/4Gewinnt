@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace _4G
 {
@@ -19,43 +21,106 @@ namespace _4G
     /// </summary>
     public partial class LogIn : Window
     {
+        private MySqlConnection conn;
+        private string server = "localhost";
+        private string database = "";
+        private string uid = "root";
+        private string password = "";
         public LogIn()
         {
-            private MySqlConnection conn;
-            private string server = "localhost";
-            private string database = "";
-            private string uid = "root";
-            private string password = "";
 
             string cString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={password};";
-
             conn = new MySqlConnection(cString);
-            InitializeComponent();
 
+            InitializeComponent();
+        }
         private void b_login_Click(object sender, RoutedEventArgs e)
         {
-            string query = $"SELECT * FROM users WHERE username ='{tb_username.Text}' && password = '{pb_password.ToString()}'";
+            string user = tb_username.Text;
+            string pass = pb_password.ToString();
+            if (IsLogin(user,pass))
+            {
+                MessageBox.Show($"Welcome {user}, you're now loged in!");
+                MainWindow win2 = new MainWindow();
+                win2.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show($"Username or Password is wrong!");
+            }
+
+
+        }
+        public bool Register(string user, string pass)
+        {
+            string query = $"INSERT INTO users (id, username, password), ('', '{user}', '{pass}')";
 
             try
             {
                 if (OpenConnection() == true)
-                    MySqlCommand cmd = new MySqlCommand(query, conn);
-                MySqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
                 {
-                    reader.Close();
-                    conn.Close();
-                    return true;
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        reader.Close();
+                        conn.Close();
+                        return true;
+                    }
+                    else
+                    {
+                        reader.Close();
+                        conn.Close();
+                        return false;
+                    }
                 }
                 else
                 {
-                    reader.Close();
                     conn.Close();
                     return false;
                 }
             }
-            catch
-                
+            catch (Exception ex)
+            {
+                conn.Close();
+                return false;
+            }
+        }
+        public bool IsLogin(string user, string pass)
+        {
+            string query = $"SELECT * FROM users WHERE username ='{user}' && password = '{pass}'";
+
+            try
+            {
+                if (OpenConnection() == true)
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        reader.Close();
+                        conn.Close();
+                        return true;
+                    }
+                    else
+                    {
+                        reader.Close();
+                        conn.Close();
+                        return false;
+                    }
+                }
+                else
+                {
+                    conn.Close();
+                    return false;
+                }
+            }
+            catch(Exception ex)
+            {
+                conn.Close();
+                return false;
+            }
         }
         private bool OpenConnection()
         {
@@ -64,7 +129,7 @@ namespace _4G
                 conn.Open();
                 return true;
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
                 switch (ex.Number)
                 {
@@ -87,6 +152,24 @@ namespace _4G
             MainWindow win2 = new MainWindow();
             win2.Show();
             this.Close();
+        }
+
+        private void b_reg_Click(object sender, RoutedEventArgs e)
+        {
+            string user = tb_username.Text;
+            string pass = pb_password.ToString();
+
+            if (Register(user, pass))
+            {
+                MessageBox.Show($"User {user}, was created!");
+                MainWindow win2 = new MainWindow();
+                win2.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show($"Please try again, something went wrong!");
+            }
         }
     }
     
