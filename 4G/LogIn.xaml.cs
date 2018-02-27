@@ -44,6 +44,7 @@ namespace _4G
                 MainWindow win2 = new MainWindow();
                 win2.Show();
                 this.Close();
+                win2.b_player.Content = user;
             }
             else
             {
@@ -165,6 +166,7 @@ namespace _4G
                 MainWindow win2 = new MainWindow();
                 win2.Show();
                 this.Close();
+                win2.b_player.Content = user;
             }
             else
             {
