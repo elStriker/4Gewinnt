@@ -38,19 +38,27 @@ namespace _4G
         {
             string user = tb_username.Text;
             string pass = pb_password.ToString();
-            if (IsLogin(user,pass))
+            for (int i = 0; i < 2; i++)
             {
-                MessageBox.Show($"Welcome {user}, you're now loged in!");
-                MainWindow win2 = new MainWindow();
-                win2.Show();
+                if (IsLogin(user, pass))
+                {
+                    MessageBox.Show($"Welcome {user}, you're now loged in!");
+                    MainWindow win2 = new MainWindow();
+                    win2.Show();
+                    if (i == 0)
+                        win2.b_player.Content = user;
+                    
+                    else
+                        win2.b_player2.Content = user;
+                }
+                else
+                {
+                    MessageBox.Show($"Username or Password is wrong!");
+                }
                 this.Close();
-                win2.b_player.Content = user;
             }
-            else
-            {
-                MessageBox.Show($"Username or Password is wrong!");
-            }
-
+            
+            
 
         }
         public bool Register(string user, string pass)
@@ -158,11 +166,11 @@ namespace _4G
 
             if (Register(user, pass))
             {
-                MessageBox.Show($"User {user}, was created!");
-                MainWindow win2 = new MainWindow();
+                MessageBox.Show($"User {user}, was created. Now LogIn please!");
+                /*MainWindow win2 = new MainWindow();
                 win2.Show();
                 this.Close();
-                win2.b_player.Content = user;
+                win2.b_player.Content = user;*/
             }
             else
             {
