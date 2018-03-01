@@ -32,7 +32,7 @@ namespace _4G
             InitializeComponent(); //Tobi war hier 26.02.2018
         }
 
-        private void btn_send_Click(object sender, RoutedEventArgs e)
+        /*private void btn_send_Click(object sender, RoutedEventArgs e)
         {
             var remEndP = new IPEndPoint(IPAddress.Loopback, 9898);
             client = new TcpClient(localendP);
@@ -54,7 +54,7 @@ namespace _4G
                     btn_send.IsEnabled = enabled;
                 }
             }
-        }
+        }*/
 
         private void b_player_Click(object sender, RoutedEventArgs e)
         {
@@ -62,6 +62,128 @@ namespace _4G
         }
 
         private void b_player2_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void b_11_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void b_12_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void b_13_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void b_14_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void b_15_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void b_21_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void b_22_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void b_23_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void b_24_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void b_25_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void b_31_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void b_32_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void b_33_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void b_34_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void b_35_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void b_41_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void b_42_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void b_43_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void b_44_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void b_45_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void b_51_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void b_52_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void b_53_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void b_54_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void b_55_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void b_61_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void b_62_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void b_63_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void b_64_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void b_65_Click(object sender, RoutedEventArgs e)
         {
 
         }

@@ -23,7 +23,7 @@ namespace _4G
     {
         private MySqlConnection conn;
         private string server = "localhost";
-        private string database = "";
+        private string database = "users";
         private string uid = "root";
         private string password = "";
         public LogIn()
@@ -42,7 +42,7 @@ namespace _4G
             {
                 if (IsLogin(user, pass))
                 {
-                    MessageBox.Show($"Welcome {user}, you're now loged in!");
+                    MessageBox.Show($"Welcome {user}, you're now logged in!");
                     MainWindow win2 = new MainWindow();
                     win2.Show();
                     if (i == 0)
@@ -54,16 +54,14 @@ namespace _4G
                 else
                 {
                     MessageBox.Show($"Username or Password is wrong!");
-                }
-                this.Close();
+                }               
             }
-            
-            
+            this.Close();
 
         }
         public bool Register(string user, string pass)
         {
-            string query = $"INSERT INTO users (id, username, password), ('', '{user}', '{pass}')";
+            string query = $"INSERT INTO user (id, username, password), ('', '{user}', '{pass}')";
 
             try
             {
@@ -94,7 +92,7 @@ namespace _4G
         }
         public bool IsLogin(string user, string pass)
         {
-            string query = $"SELECT * FROM users WHERE username ='{user}' && password = '{pass}'";
+            string query = $"SELECT * FROM user WHERE username ='{user}' && password = '{pass}'";
 
             try
             {
