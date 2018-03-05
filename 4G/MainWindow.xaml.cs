@@ -18,12 +18,13 @@ using System.IO;
 
 namespace _4G
 {
+    
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-
+       
         int player;
         TcpClient client;
         IPEndPoint localendP;
@@ -32,7 +33,7 @@ namespace _4G
             InitializeComponent(); //Tobi war hier 26.02.2018
         }
 
-        /*private void btn_send_Click(object sender, RoutedEventArgs e)
+       /* private void btn_send_Click(object sender, RoutedEventArgs e)
         {
             var remEndP = new IPEndPoint(IPAddress.Loopback, 9898);
             client = new TcpClient(localendP);

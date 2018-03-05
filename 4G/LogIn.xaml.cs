@@ -21,6 +21,7 @@ namespace _4G
     /// </summary>
     public partial class LogIn : Window
     {
+        MainWindow win2 = new MainWindow();
         private MySqlConnection conn;
         private string server = "localhost";
         private string database = "users";
@@ -40,28 +41,58 @@ namespace _4G
             string pass = pb_password.ToString();
             for (int i = 0; i < 2; i++)
             {
-                if (IsLogin(user, pass))
+                if (i == 0)                    
                 {
-                    MessageBox.Show($"Welcome {user}, you're now logged in!");
-                    MainWindow win2 = new MainWindow();
-                    win2.Show();
-                    if (i == 0)
+                    if (IsLogin(user, pass))
+                    {
+                        MessageBox.Show($"Welcome {user}, you're now logged in!");
                         win2.b_player.Content = user;
+                    }
+                        
                     
                     else
-                        win2.b_player2.Content = user;
+                        MessageBox.Show($"Username or Password is wrong!");
+                    win2.b_player2.Content = user;
                 }
                 else
                 {
-                    MessageBox.Show($"Username or Password is wrong!");
+                    string query = $"SELECT * FROM user WHERE username ='{user}' && password = '{pass}'";
+
+                    try
+                    {
+                        if (OpenConnection() == true)
+                        {
+                            MySqlCommand cmd = new MySqlCommand(query, conn);
+                            MySqlDataReader reader = cmd.ExecuteReader();
+                            if (reader.Read())
+                            {
+                                reader.Close();
+                                conn.Close();
+                            }
+                            else
+                            {
+                                reader.Close();
+                                conn.Close();
+                            }
+                        }
+                        else
+                        {
+                            conn.Close();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        conn.Close();
+                    }
                 }               
             }
             this.Close();
+            win2.Show();
 
         }
         public bool Register(string user, string pass)
         {
-            string query = $"INSERT INTO user (id, username, password), ('', '{user}', '{pass}')";
+            string query = $"INSERT INTO user (id, username, password, siege, verluste) VALUES ('', '{user}', '{pass}', '', '')";
 
             try
             {
