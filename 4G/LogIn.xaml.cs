@@ -27,6 +27,7 @@ namespace _4G
         private string database = "users";
         private string uid = "root";
         private string password = "";
+        public int i = 0;
         public LogIn()
         {
 
@@ -39,55 +40,33 @@ namespace _4G
         {
             string user = tb_username.Text;
             string pass = pb_password.ToString();
-            for (int i = 0; i < 2; i++)
-            {
-                if (i == 0)                    
-                {
-                    if (IsLogin(user, pass))
+            
+                if (IsLogin(user, pass))
+                { 
+                
+                    if (i == 0)
                     {
                         MessageBox.Show($"Welcome {user}, you're now logged in!");
                         win2.b_player.Content = user;
+                        i++;
+                    }
+                                            
+                    else
+                    {
+                        MessageBox.Show($"Welcome {user}, you're now logged in!");
+                        win2.b_player2.Content = user;
+                        this.Close();
+                        win2.Show();
                     }
                         
-                    
-                    else
-                        MessageBox.Show($"Username or Password is wrong!");
-                    win2.b_player2.Content = user;
-                }
+                } 
                 else
                 {
-                    string query = $"SELECT * FROM user WHERE username ='{user}' && password = '{pass}'";
-
-                    try
-                    {
-                        if (OpenConnection() == true)
-                        {
-                            MySqlCommand cmd = new MySqlCommand(query, conn);
-                            MySqlDataReader reader = cmd.ExecuteReader();
-                            if (reader.Read())
-                            {
-                                reader.Close();
-                                conn.Close();
-                            }
-                            else
-                            {
-                                reader.Close();
-                                conn.Close();
-                            }
-                        }
-                        else
-                        {
-                            conn.Close();
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        conn.Close();
-                    }
+                    MessageBox.Show($"Username or Password is wrong!");
+                    
                 }               
-            }
-            this.Close();
-            win2.Show();
+            
+            
 
         }
         public bool Register(string user, string pass)

@@ -15,7 +15,7 @@ namespace Server
         IPEndPoint _EndPoint;
         Socket _Socket;
 
-        public void Listen()
+      /*  public void Listen()
         {
             Console.WriteLine("Das spielt beginnt!");
             while (true)
@@ -44,7 +44,7 @@ namespace Server
 
 
                 }
-            }
+            }*/
         }
 
         public TCPListener()
