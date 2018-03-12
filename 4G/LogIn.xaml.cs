@@ -60,11 +60,11 @@ namespace _4G
                     }
                         
                 } 
-                else
-                {
-                    MessageBox.Show($"Username or Password is wrong!");
+                //else
+                //{
+                //    MessageBox.Show($"Username or Password is wrong!");
                     
-                }               
+                //}               
             
             
 
@@ -180,10 +180,10 @@ namespace _4G
                 this.Close();
                 win2.b_player.Content = user;*/
             }
-            else
-            {
-                MessageBox.Show($"Please try again, something went wrong!");
-            }
+            //else
+            //{
+            //    MessageBox.Show($"Please try again, something went wrong!");
+            //}
         }
     }
     

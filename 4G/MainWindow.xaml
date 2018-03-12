@@ -2,159 +2,164 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="4Gewinnt" Height="485.323" Width="661.318">
-    <Grid Background="#FF20A0FF">
-        <Button x:Name="b_15" Content="" HorizontalAlignment="Left" Margin="196,334,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_15_Click">
+    <Grid x:Name="grd_main" Background="#FF20A0FF">
+        <Button x:Name="b_15" Content="" HorizontalAlignment="Left" Margin="196,334,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_61" Content="" HorizontalAlignment="Left" Margin="526,70,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_61_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_62" Content="" HorizontalAlignment="Left" Margin="526,136,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_62_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_51" Content="" HorizontalAlignment="Left" Margin="460,70,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_51_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_63" Content="" HorizontalAlignment="Left" Margin="526,202,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_63_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_52" Content="" HorizontalAlignment="Left" Margin="460,136,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_52_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_41" Content="" HorizontalAlignment="Left" Margin="394,70,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_41_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_53" Content="" HorizontalAlignment="Left" Margin="460,202,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_53_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_64" Content="" HorizontalAlignment="Left" Margin="526,268,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_64_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_54" Content="" HorizontalAlignment="Left" Margin="460,268,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_54_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_42" Content="" HorizontalAlignment="Left" Margin="394,136,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_42_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_43" Content="" HorizontalAlignment="Left" Margin="394,202,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_43_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_44" Content="" HorizontalAlignment="Left" Margin="394,268,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_44_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_65" Content="" HorizontalAlignment="Left" Margin="526,334,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_65_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_55" Content="" HorizontalAlignment="Left" Margin="460,334,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_55_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_45" Content="" HorizontalAlignment="Left" Margin="394,334,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_45_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_21" Content="" HorizontalAlignment="Left" Margin="262,70,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_21_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_22" Content="" HorizontalAlignment="Left" Margin="262,136,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_22_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_23" Content="" HorizontalAlignment="Left" Margin="262,202,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_23_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_34" Content="" HorizontalAlignment="Left" Margin="328,268,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_34_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_24" Content="" HorizontalAlignment="Left" Margin="262,268,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_24_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_31" Content="" HorizontalAlignment="Left" Margin="328,70,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_31_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_33" Content="" HorizontalAlignment="Left" Margin="328,202,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_33_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_32" Content="" HorizontalAlignment="Left" Margin="328,136,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_32_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_35" Content="" HorizontalAlignment="Left" Margin="328,334,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_35_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_25" Content="" HorizontalAlignment="Left" Margin="262,334,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_25_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_11" Content="" HorizontalAlignment="Left" Margin="196,70,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_11_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_12" Content="" HorizontalAlignment="Left" Margin="196,136,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_12_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_13" Content="" HorizontalAlignment="Left" Margin="196,202,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_13_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
-        <Button x:Name="b_14" Content="" HorizontalAlignment="Left" Margin="196,268,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="b_14_Click">
+        <Button x:Name="b_14" Content="" HorizontalAlignment="Left" Margin="196,268,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Bryan09\Dropbox\2017-18\SEW\4G\4G\res\Weiß Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
-        <Button x:Name="b_player" Content="Player" HorizontalAlignment="Left" Margin="31,70,0,0" VerticalAlignment="Top" Width="75" Click="b_player_Click"/>
-        <Button x:Name="b_player2" Content="Player2" HorizontalAlignment="Left" Margin="31,121,0,0" VerticalAlignment="Top" Width="75" Click="b_player2_Click"/>
+        <Button x:Name="b_player" Content="Player" HorizontalAlignment="Left" Margin="31,136,0,0" VerticalAlignment="Top" Width="75" Click="b_player_Click"/>
+        <Button x:Name="b_player2" Content="Player2" HorizontalAlignment="Left" Margin="31,187,0,0" VerticalAlignment="Top" Width="75" Click="b_player2_Click"/>
+        <!--Button x:Name="b_play" Content="Play" HorizontalAlignment="Left" Margin="31,268,0,0" VerticalAlignment="Top" Width="75" Click="b_play_Click"/-->
+        <Label x:Name="l_player" Content="It's your turn" HorizontalAlignment="Left" Margin="31,70,0,0" VerticalAlignment="Top" Height="37" Width="113"/>
+        
+        <!--Image Source="Images\Weiß_Punkt.jpg" HorizontalAlignment="Left" Height="66" Margin="196,334,0,0" VerticalAlignment="Top" Width="66"/-->
+
 
     </Grid>
 </Window>
