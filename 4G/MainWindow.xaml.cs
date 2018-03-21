@@ -31,6 +31,9 @@ namespace _4G
         public MainWindow()
         {
             InitializeComponent(); //Tobi war hier 26.02.2018 //Brian ist immer hier!
+            brush1.ImageSource = new BitmapImage(new Uri("../../Images/Weiß_Punkt.jpg", UriKind.Relative));
+            brush2.ImageSource = new BitmapImage(new Uri("../../Images/Rot_Punkt.jpg", UriKind.Relative));
+            brush3.ImageSource = new BitmapImage(new Uri("../../Images/Gelb_Punkt.jpg", UriKind.Relative));
         }
 
         // b_11 b_21 b_31 b_41 b_51 b_61
@@ -48,20 +51,24 @@ namespace _4G
         {            
             localendP = new IPEndPoint(IPAddress.Loopback, 9090);
             b_player.IsEnabled = false;
+            b_player2.IsEnabled = false;
+            Task.Run(() => Senden((Button)sender));
         }
 
         private void b_player2_Click(object sender, RoutedEventArgs e)
         {
             localendP = new IPEndPoint(IPAddress.Loopback, 8989);
-            b_player2.IsEnabled = false;
+            b_player2.IsEnabled = false;            
+            b_player.IsEnabled = false;
+            Task.Run(() => Senden((Button)sender));
         }
 
         void Senden(Button button)
         {
             var remEndP = new IPEndPoint(IPAddress.Loopback, 9898);
             client = new TcpClient(localendP);
-            client.SendTimeout = 2000;
-            client.ReceiveTimeout = 2000;
+            ////client.SendTimeout = 2000;
+            ////client.ReceiveTimeout = 2000;
             client.Connect(remEndP);
 
             using (NetworkStream stream = client.GetStream())
@@ -79,159 +86,18 @@ namespace _4G
                 }
             }
         }
-        private void player_Switch(Button button)
-        {
-            brush1.ImageSource = new BitmapImage(new Uri("Images/Weiß_Punkt.jpg", UriKind.Relative));
-            brush2.ImageSource = new BitmapImage(new Uri("Images/Rot_Punkt.jpg", UriKind.Relative));
-            brush3.ImageSource = new BitmapImage(new Uri("Images/Gelb_Punkt.jpg", UriKind.Relative));
+        private void player_Switch(ref Button button)
+        {            
             if (player == 0)
             {
                 button.Background = brush2;
                 player++;
-                button.IsEnabled = false;
             }
             else if (player == 1)
             {
                 button.Background = brush3;
                 player--;
-                button.IsEnabled = false;
             }
-        }
-         private void b_11_Click(object sender, RoutedEventArgs e)
-        {
-            //player_Switch(b_11);
-            //if (b_12.Background != brush1)
-            //    b_11.IsEnabled = false;
-            //Senden(b_11);
-        }
-
-        private void b_12_Click(object sender, RoutedEventArgs e)
-        {
-            //player_Switch(b_12);
-            //if (b_13.Background != brush1)
-            //    button_belegen(b_12);
-            //Senden(b_12);
-        }
-        private void b_13_Click(object sender, RoutedEventArgs e)
-        {
-            //player_Switch(b_11);
-            //if (b_14.Background != brush1)
-            //    button_belegen(b_13);
-            //Senden(b_11);
-        }
-        private void b_14_Click(object sender, RoutedEventArgs e)
-        {
-            //player_Switch(b_11);
-            //if (b_15.Background != brush1)
-            //    button_belegen(b_14);
-            //Senden(b_11);
-        }
-        private void b_15_Click(object sender, RoutedEventArgs e)
-        {
-            //player_Switch(b_11);
-            //if (b_12.Background != brush1)
-            //    button_belegen(b_15);
-            //Senden(b_11);
-        }
-        private void b_21_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void b_22_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void b_23_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void b_24_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void b_25_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void b_31_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void b_32_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void b_33_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void b_34_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void b_35_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void b_41_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void b_42_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void b_43_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void b_44_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void b_45_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void b_51_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void b_52_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void b_53_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void b_54_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void b_55_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void b_61_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void b_62_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void b_63_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void b_64_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void b_65_Click(object sender, RoutedEventArgs e)
-        {
-
         }
         
         /*  private void b_play_Click(object sender, RoutedEventArgs e)
@@ -660,14 +526,26 @@ namespace _4G
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            Button btn = (Button)sender;
-            player_Switch(btn);
-            if (btn.Name[3] == '5' && btn.Background == brush1)
-                btn.IsEnabled = false;
-            else if (grd_main.FindName("b_" + btn.Name[2] + ((int)btn.Name[3] + 1)) != brush1)
-                btn.IsEnabled = false;
+            Button btn = (Button)sender;          
+            char one = btn.Name[2];//Wir holen uns dir Column (b_12 die 1 an der 3ten stelle, 3te wgen index bei 0)
+            string two = btn.Name[3].ToString();//Wir holen die Column Number (b_12 die 2 an der 4ten stelle, 4te wgen index bei 0)
+            string down_name = "b_" + one + (int.Parse(two) + 1);//b_ Am Anfang, dann one(Column) + (1+Column Number, 1+ wegen eins Runter)
+            string srcs = btn.Name[3] == '5' ? ((ImageBrush)btn.Background).ImageSource.ToString() : ((ImageBrush)(((Button)grd_main.FindName(down_name)).Background)).ImageSource.ToString();
+            //Falls ich schon unten bin (==5) Dann gibt mir den Pfad zum jzigen Bild
+            //Sonst zu dem unetr mir
+            string src = srcs.Split('/')[srcs.Split('/').Length - 1];
+            string src2 = brush1.ImageSource.ToString().Split('/')[brush1.ImageSource.ToString().Split('/').Length - 1];
+            //Mich interessiert nich der Pfad sonsern nur das ganz am Ende
+            if (btn.Name[3] == '5' ? src == src2 : src != src2)
+                player_Switch(ref btn);
+            //Falls ich unten bin muss ich weiß sein, sonst darf das unter mir nicht weiß sein
         }
 
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
+        }
     }
 
 }

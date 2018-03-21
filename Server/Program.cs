@@ -21,28 +21,28 @@ namespace Server
             listener.Start();
 
             Console.WriteLine("Server gestartet");
-            while (true)
-            {
-                using (player2 = listener.AcceptTcpClient())
-                {
-                    using (player = listener.AcceptTcpClient())
-                        Send_Rec(player, player2);
-                }
-            }
+            player = listener.AcceptTcpClient();
+            Console.WriteLine("Player1 Connected");
+            player2 = listener.AcceptTcpClient();
+            Send_Rec(player, player2);
         }
 
         private static void Send_Rec(TcpClient send, TcpClient rec)
         {
-            string msg;
-            using (var reader = new StreamReader(rec.GetStream(), Encoding.ASCII, true, 4000, leaveOpen: true))
+            while (true)
             {
-                msg = reader.ReadLine();
+                string msg;
+                using (var reader = new StreamReader(rec.GetStream(), Encoding.ASCII, true, 4000, leaveOpen: true))
+                {
+                    msg = reader.ReadLine();
+                }
+                Console.WriteLine(msg);
+                using (var writer = new StreamWriter(send.GetStream(), Encoding.ASCII, 4000, leaveOpen: true))
+                {
+                    writer.WriteLine(msg);
+                }
+                Send_Rec(rec, send);
             }
-            using (var writer = new StreamWriter(send.GetStream(), Encoding.ASCII, 4000, leaveOpen: true))
-            {
-                writer.WriteLine(msg);
-            }
-            Send_Rec(rec, send);
         }
     }
     
