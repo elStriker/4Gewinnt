@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MySql.Data;
+using System.Net;
+using System.Net.Sockets;
+using System.IO;
 using MySql.Data.MySqlClient;
 
 namespace _4G
@@ -21,7 +24,11 @@ namespace _4G
     /// </summary>
     public partial class LogIn : Window
     {
+        int player;
+        TcpClient client;
+        IPEndPoint localendP;
         MainWindow win2 = new MainWindow();
+        //MainWindow win3 = new MainWindow();
         private MySqlConnection conn;
         private string server = "localhost";
         private string database = "users";
@@ -47,16 +54,27 @@ namespace _4G
                     if (i == 0)
                     {
                         MessageBox.Show($"Welcome {user}, you're now logged in!");
-                        win2.b_player.Content = user;
+                        win2.l_player1.Content = user;
                         i++;
+                        localendP = new IPEndPoint(IPAddress.Loopback, 9090);
+                        win2.l_player1.IsEnabled = false;
+                        win2.l_player2.IsEnabled = false;
+                    Task.Run(() => Senden(win2.l_player1));
+                        //win2.Show();
                     }
                                             
                     else
                     {
                         MessageBox.Show($"Welcome {user}, you're now logged in!");
-                        win2.b_player2.Content = user;
+                        win2.l_player2.Content = user;
+                        localendP = new IPEndPoint(IPAddress.Loopback, 8989);
+                        win2.l_player2.IsEnabled = false;
+                        win2.l_player1.IsEnabled = false;
+                        Task.Run(() => Senden(win2.l_player2));
                         this.Close();
                         win2.Show();
+                        
+                        
                     }
                         
                 } 
@@ -65,10 +83,32 @@ namespace _4G
                 //    MessageBox.Show($"Username or Password is wrong!");
                     
                 //}               
-            
-            
-
         }
+        void Senden(Label label)
+        {
+            var remEndP = new IPEndPoint(IPAddress.Loopback, 9897);
+            client = new TcpClient(localendP);
+            ////client.SendTimeout = 2000;
+            ////client.ReceiveTimeout = 2000;
+            client.Connect(remEndP);
+
+            NetworkStream stream = client.GetStream();
+            
+                using (var writer = new StreamWriter(stream, Encoding.ASCII, 4000, leaveOpen: true))
+                {
+                    Console.WriteLine(player.ToString() + ";" + label.IsEnabled);
+                }
+                using (var reader = new StreamReader(stream, Encoding.ASCII, true, 4000, leaveOpen: true))
+                {
+                    var teile = reader.ReadLine().Split(';');
+                    player = Convert.ToInt32(teile[0]);
+                    bool enabled = Convert.ToBoolean(teile[1]);
+                    label.IsEnabled = enabled;
+                }
+            
+        }
+
+
         public bool Register(string user, string pass)
         {
             string query = $"INSERT INTO user (id, username, password, siege, verluste) VALUES ('', '{user}', '{pass}', '', '')";

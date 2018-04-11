@@ -6,24 +6,30 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
 using System.IO;
+using _4G;
 
 
 namespace Server
 {
+    
     class Program
     {
+        
+        
         static void Main(string[] args)
         {
+            
             TcpClient player;
             TcpClient player2;
-            var localEndp = new IPEndPoint(IPAddress.Loopback, 9898);
+            var localEndp = new IPEndPoint(IPAddress.Loopback, 9897);
             TcpListener listener = new TcpListener(localEndp);
             listener.Start();
 
             Console.WriteLine("Server gestartet");
             player = listener.AcceptTcpClient();
-            Console.WriteLine("Player1 Connected");
+            Console.WriteLine("1st player is Connected");
             player2 = listener.AcceptTcpClient();
+            Console.WriteLine("2nd player is Connected");
             Send_Rec(player, player2);
         }
 
