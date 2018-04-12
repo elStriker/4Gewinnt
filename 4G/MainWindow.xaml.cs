@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Net;
 using System.Net.Sockets;
 using System.IO;
+using System.Windows.Media.Animation;
 
 namespace _4G
 {
@@ -111,13 +112,13 @@ namespace _4G
                 if (gewonnen == 1)
                 {
                     l_player.Foreground = Brushes.Green;
-                    l_player.Content = "Spieler 1 hat gewonnen";
+                    l_player.Content = l_player1.Content + " hat gewonnen";
                 }
 
                 if (gewonnen == 2)
                 {
                     l_player.Foreground = Brushes.Green;
-                    l_player.Content = "Spieler 2 hat gewonnen";
+                    l_player.Content = l_player2.Content + " hat gewonnen";
                 }
 
                 if (gewonnen == 0)
@@ -144,7 +145,50 @@ namespace _4G
             //Mich interessiert nich der Pfad sonsern nur das ganz am Ende
             if (btn.Name[3] == '5' ? src == src2 : src != src2)
                 player_Switch(ref btn);
+            else
+            {
+                int fall = 0;
+                for(int i = 1; i <= 5; i++)
+                {
+                    string down_n = "b_" + one + i;
+                    string srcss = ((ImageBrush)(((Button)grd_main.FindName(down_n)).Background)).ImageSource.ToString();
+                    if (srcss.Split('/')[srcss.Split('/').Length - 1] != src2)
+                        break;
+                        fall++;
+                }
+                Fall_Anim("b_" + one + fall, int.Parse(one.ToString()), fall);
+            }
             //Falls ich unten bin muss ich weiß sein, sonst darf das unter mir nicht weiß sein
+        }
+
+        private void Fall_Anim(string btn_n, int row, int fall)
+        {
+            Button button = (Button)grd_main.FindName(btn_n);
+            int thk_l = 206 + (66 * (row - 1));
+            int thk_b = 360 - (66 * (fall-1));
+            ThicknessAnimation anim = new ThicknessAnimation(new Thickness(thk_l, 0, 0, 360), new Thickness(thk_l, 0, 0, thk_b), TimeSpan.FromSeconds(0.5));
+            if (player == 1)
+            {
+                ell_anim_glb.Opacity = 1;
+                anim.Completed += new EventHandler((sender , e) => 
+                {
+                    ell_anim_glb.Opacity = 0;
+                    ell_anim_glb.Margin = new Thickness(0);
+                    player_Switch(ref button);
+                });
+                ell_anim_glb.BeginAnimation(MarginProperty, anim);
+            }
+            else
+            {
+                ell_anim_rot.Opacity = 1;
+                anim.Completed += new EventHandler((sender, e) =>
+                {
+                    ell_anim_rot.Opacity = 0;
+                    ell_anim_rot.Margin = new Thickness(0);
+                    player_Switch(ref button);
+                });
+                ell_anim_rot.BeginAnimation(MarginProperty, anim);
+            }
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)

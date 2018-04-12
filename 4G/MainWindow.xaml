@@ -4,10 +4,10 @@
         AllowsTransparency="True" Opacity="1.5"
         Title="4Gewinnt" Height="485.323" Width="661.318" WindowStyle="None" ResizeMode="NoResize" MouseDown="Window_MouseDown">
     <!-- Wenn du oben Leiste haben wills, WindowStlye, ResizeMode, MouseDown-->
-    <Grid x:Name="grd_main">
+    <Grid x:Name="grd_main">    
         <Button x:Name="b_15" Content="" HorizontalAlignment="Left" Margin="196,334,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click" Foreground="{x:Null}">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images/Weiß_Punkt.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_61" Content="" HorizontalAlignment="Left" Margin="526,70,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
@@ -163,7 +163,8 @@
         <Label Content="It's your turn" HorizontalAlignment="Left" Margin="31,10,0,0" VerticalAlignment="Top" Width="87"/>
 
         <!--Image Source="Images\Weiß_Punkt.jpg" HorizontalAlignment="Left" Height="66" Margin="196,334,0,0" VerticalAlignment="Top" Width="66"/-->
-
+        <Ellipse x:Name="ell_anim_glb" Margin="0,0,0,0" Fill="#FFFFF800" Height="46" Width="46" VerticalAlignment="Bottom" HorizontalAlignment="Left" Opacity="0"/>
+        <Ellipse x:Name="ell_anim_rot" Margin="0,0,0,0" Fill="#FFDD302C" Height="46" Width="46" VerticalAlignment="Bottom" HorizontalAlignment="Left" Opacity="0"/>
 
     </Grid>
 </Window>
