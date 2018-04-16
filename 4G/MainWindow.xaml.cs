@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Net;
 using System.Net.Sockets;
+using MySql.Data.MySqlClient;
+using MySql;
 using System.IO;
 using System.Windows.Media.Animation;
 
@@ -27,8 +29,13 @@ namespace _4G
     {
        
         int player;
-        //TcpClient client;
-        //IPEndPoint localendP;
+        int pz = 0;
+        int pz2 = 0;
+        private MySqlConnection conn;
+        private string server = "localhost";
+        private string database = "users";
+        private string uid = "root";
+        private string password = "";
         public MainWindow()
         {
             InitializeComponent(); //Tobi war hier 26.02.2018 //Brian ist immer hier!
@@ -91,6 +98,7 @@ namespace _4G
             {
                 if ((player == 0) && (l_player.Content == l_player1.Content))
                 {
+                    pz++;
                     button.Background = brush2;
                     l_player.Foreground = Brushes.Yellow;
                     l_player.Content = l_player2.Content;
@@ -98,6 +106,7 @@ namespace _4G
                 }
                 else if ((player == 1) && (l_player.Content == l_player2.Content))
                 {
+                    pz2++;
                     button.Background = brush3;
                     l_player.Foreground = Brushes.Red;
                     l_player.Content = l_player1.Content;
@@ -113,12 +122,22 @@ namespace _4G
                 {
                     l_player.Foreground = Brushes.Green;
                     l_player.Content = l_player1.Content + " hat gewonnen";
+                    string sid = $"SELECT id FROM user where username = {l_player1.Content}";
+                    string vid = $"SELECT id FROM user where username = {l_player2.Content}";
+                    string win = $"UPDATE user SET siege = siege + 1 where username = {l_player1.Content}";
+                    string lost = $"UPDATE user SET verluste = verluste + 1 where username = {l_player2.Content}";
+                    string query = $"INSERT INTO games (id, date, countsz, sieger_sid, verlierer_sid) VALUES ('', '{DateTime.Now}', '{pz}', '{sid} ', '{vid}')";
                 }
 
                 if (gewonnen == 2)
                 {
                     l_player.Foreground = Brushes.Green;
                     l_player.Content = l_player2.Content + " hat gewonnen";
+                    string sid1 = $"SELECT id FROM user where username = {l_player2.Content}";
+                    string vid1 = $"SELECT id FROM user where username = {l_player1.Content}";
+                    string lost = $"UPDATE user SET verluste = verluste + 1 where username = {l_player1.Content}";
+                    string win = $"UPDATE user SET siege = siege + 1 where username = {l_player2.Content}";
+                    string query = $"INSERT INTO games (id, date, countsz, sieger_sid, verlierer_sid) VALUES ('', '{DateTime.Now}', '{pz}', '{sid1} ', '{vid1}')";
                 }
 
                 if (gewonnen == 0)
@@ -503,7 +522,13 @@ namespace _4G
 
             }
 
-        
+        private void b_s_Click(object sender, RoutedEventArgs e)
+        {
+            string p1 = $"SELECT username, siege, verluste FROM user where username = {l_player1.Content}";
+            string p2 = $"SELECT username, siege, verluste FROM user where username = {l_player2.Content}";
+
+            MessageBox.Show(p1, p2);
+        }
     }
 
 }

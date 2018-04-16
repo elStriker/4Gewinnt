@@ -165,6 +165,7 @@
         <!--Image Source="Images\Weiß_Punkt.jpg" HorizontalAlignment="Left" Height="66" Margin="196,334,0,0" VerticalAlignment="Top" Width="66"/-->
         <Ellipse x:Name="ell_anim_glb" Margin="0,0,0,0" Fill="#FFFFF800" Height="46" Width="46" VerticalAlignment="Bottom" HorizontalAlignment="Left" Opacity="0"/>
         <Ellipse x:Name="ell_anim_rot" Margin="0,0,0,0" Fill="#FFDD302C" Height="46" Width="46" VerticalAlignment="Bottom" HorizontalAlignment="Left" Opacity="0"/>
+        <Button x:Name="b_s" Content="Status" HorizontalAlignment="Left" Margin="31,253,0,0" VerticalAlignment="Top" Width="75" Click="b_s_Click"/>
 
     </Grid>
 </Window>
