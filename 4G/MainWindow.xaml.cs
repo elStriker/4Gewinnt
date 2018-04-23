@@ -42,8 +42,32 @@ namespace _4G
             brush1.ImageSource = new BitmapImage(new Uri("../../Images/Weiß_Punkt.jpg", UriKind.Relative));
             brush2.ImageSource = new BitmapImage(new Uri("../../Images/Rot_Punkt.jpg", UriKind.Relative));
             brush3.ImageSource = new BitmapImage(new Uri("../../Images/Gelb_Punkt.jpg", UriKind.Relative));
+            string cString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={password};";
+            conn = new MySqlConnection(cString);
         }
 
+        private bool OpenConnection()
+        {
+            try
+            {
+                conn.Open();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                switch (ex.Number)
+                {
+                    case 0:
+                        MessageBox.Show("No server connection!");
+                        break;
+                    case 1045:
+                        MessageBox.Show("Input is wrong!");
+                        break;
+                }
+                return false;
+            }
+        }
+    
         // b_11 b_21 b_31 b_41 b_51 b_61
         // b_12 b_22 b_32 b_42 b_52 b_62
         // b_13 b_23 b_33 b_43 b_53 b_63
@@ -122,22 +146,65 @@ namespace _4G
                 {
                     l_player.Foreground = Brushes.Green;
                     l_player.Content = l_player1.Content + " hat gewonnen";
-                    string sid = $"SELECT id FROM user where username = {l_player1.Content}";
-                    string vid = $"SELECT id FROM user where username = {l_player2.Content}";
-                    string win = $"UPDATE user SET siege = siege + 1 where username = {l_player1.Content}";
-                    string lost = $"UPDATE user SET verluste = verluste + 1 where username = {l_player2.Content}";
+                    string sid = $"SELECT id FROM user where username = \"{l_player1.Content}\"";
+                    string vid = $"SELECT id FROM user where username = \"{l_player2.Content}\"";
+                    string win = $"UPDATE user SET siege = siege + 1 where username = \"{l_player1.Content}\"";
+                    string lost = $"UPDATE user SET verluste = verluste + 1 where username = \"{l_player2.Content}\"";
                     string query = $"INSERT INTO games (id, date, countsz, sieger_sid, verlierer_sid) VALUES ('', '{DateTime.Now}', '{pz}', '{sid} ', '{vid}')";
+                    if (OpenConnection() == true)
+                    {
+                        MySqlCommand cmd = new MySqlCommand(sid, conn);
+                        MySqlCommand cmd1 = new MySqlCommand(vid, conn);
+                        MySqlCommand cmd2 = new MySqlCommand(win, conn);
+                        MySqlCommand cmd3 = new MySqlCommand(lost, conn);
+                        MySqlCommand cmd4 = new MySqlCommand(query, conn);
+                        try
+                        {
+                            cmd.ExecuteNonQuery();
+                            cmd1.ExecuteNonQuery();
+                            cmd2.ExecuteNonQuery();
+                            cmd3.ExecuteNonQuery();
+                            cmd4.ExecuteNonQuery();
+                            
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString());
+                        }
+                    }
                 }
 
-                if (gewonnen == 2)
+                if (gewonnen == 2 && OpenConnection() == true)
                 {
                     l_player.Foreground = Brushes.Green;
                     l_player.Content = l_player2.Content + " hat gewonnen";
-                    string sid1 = $"SELECT id FROM user where username = {l_player2.Content}";
-                    string vid1 = $"SELECT id FROM user where username = {l_player1.Content}";
-                    string lost = $"UPDATE user SET verluste = verluste + 1 where username = {l_player1.Content}";
-                    string win = $"UPDATE user SET siege = siege + 1 where username = {l_player2.Content}";
+                    string sid1 = $"SELECT id FROM user where username = \"{l_player2.Content}\"";
+                    string vid1 = $"SELECT id FROM user where username = \"{l_player1.Content}\"";
+                    string lost = $"UPDATE user SET verluste = verluste + 1 where username = \"{l_player1.Content}\"";
+                    string win = $"UPDATE user SET siege = siege + 1 where username = \"{l_player2.Content}\"";
                     string query = $"INSERT INTO games (id, date, countsz, sieger_sid, verlierer_sid) VALUES ('', '{DateTime.Now}', '{pz}', '{sid1} ', '{vid1}')";
+                    if (OpenConnection() == true)
+                    {
+                        MySqlCommand cmd = new MySqlCommand(sid1, conn);
+                        MySqlCommand cmd1 = new MySqlCommand(vid1, conn);
+                        MySqlCommand cmd2 = new MySqlCommand(win, conn);
+                        MySqlCommand cmd3 = new MySqlCommand(lost, conn);
+                        MySqlCommand cmd4 = new MySqlCommand(query, conn);
+                        try
+                        {
+                            cmd.ExecuteNonQuery();
+                            cmd1.ExecuteNonQuery();
+                            cmd2.ExecuteNonQuery();
+                            cmd3.ExecuteNonQuery();
+                            cmd4.ExecuteNonQuery();
+
+                        }
+                        catch (Exception)
+                        {
+
+                        }
+                    }
                 }
 
                 if (gewonnen == 0)
@@ -524,10 +591,24 @@ namespace _4G
 
         private void b_s_Click(object sender, RoutedEventArgs e)
         {
-            string p1 = $"SELECT username, siege, verluste FROM user where username = {l_player1.Content}";
-            string p2 = $"SELECT username, siege, verluste FROM user where username = {l_player2.Content}";
-
-            MessageBox.Show(p1, p2);
+            string p1 = $"SELECT username, siege, verluste FROM user where username = \"{l_player1.Content}\"";
+            string p2 = $"SELECT username, siege, verluste FROM user where username = \"{l_player2.Content}\"";
+            if (OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(p1, conn);
+                MySqlCommand cmd1 = new MySqlCommand(p2, conn);
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    cmd1.ExecuteNonQuery();
+                    MessageBox.Show(cmd.ToString(), cmd1.ToString());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+            
         }
     }
 

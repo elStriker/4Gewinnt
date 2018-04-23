@@ -4,168 +4,201 @@
         AllowsTransparency="True" Opacity="1.5"
         Title="4Gewinnt" Height="485.323" Width="661.318" WindowStyle="None" ResizeMode="NoResize" MouseDown="Window_MouseDown">
     <!-- Wenn du oben Leiste haben wills, WindowStlye, ResizeMode, MouseDown-->
-    <Grid x:Name="grd_main">    
+    <Grid x:Name="grd_main">
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/galaxy6.jpg"/>
+        </Grid.Background>
         <Button x:Name="b_15" Content="" HorizontalAlignment="Left" Margin="196,334,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click" Foreground="{x:Null}">
             <Button.Background>
-                <ImageBrush ImageSource="Images/Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images/Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_61" Content="" HorizontalAlignment="Left" Margin="526,70,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_62" Content="" HorizontalAlignment="Left" Margin="526,136,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_51" Content="" HorizontalAlignment="Left" Margin="460,70,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_63" Content="" HorizontalAlignment="Left" Margin="526,202,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_52" Content="" HorizontalAlignment="Left" Margin="460,136,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_41" Content="" HorizontalAlignment="Left" Margin="394,70,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_53" Content="" HorizontalAlignment="Left" Margin="460,202,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_64" Content="" HorizontalAlignment="Left" Margin="526,268,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_54" Content="" HorizontalAlignment="Left" Margin="460,268,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_42" Content="" HorizontalAlignment="Left" Margin="394,136,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_43" Content="" HorizontalAlignment="Left" Margin="394,202,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_44" Content="" HorizontalAlignment="Left" Margin="394,268,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_65" Content="" HorizontalAlignment="Left" Margin="526,334,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_55" Content="" HorizontalAlignment="Left" Margin="460,334,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_45" Content="" HorizontalAlignment="Left" Margin="394,334,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_21" Content="" HorizontalAlignment="Left" Margin="262,70,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_22" Content="" HorizontalAlignment="Left" Margin="262,136,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_23" Content="" HorizontalAlignment="Left" Margin="262,202,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_34" Content="" HorizontalAlignment="Left" Margin="328,268,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_24" Content="" HorizontalAlignment="Left" Margin="262,268,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_31" Content="" HorizontalAlignment="Left" Margin="328,70,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_33" Content="" HorizontalAlignment="Left" Margin="328,202,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_32" Content="" HorizontalAlignment="Left" Margin="328,136,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_35" Content="" HorizontalAlignment="Left" Margin="328,334,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_25" Content="" HorizontalAlignment="Left" Margin="262,334,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_11" Content="" HorizontalAlignment="Left" Margin="196,70,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_12" Content="" HorizontalAlignment="Left" Margin="196,136,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_13" Content="" HorizontalAlignment="Left" Margin="196,202,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
         <Button x:Name="b_14" Content="" HorizontalAlignment="Left" Margin="196,268,0,0" VerticalAlignment="Top" Width="66" Height="66" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Click="button_Click">
             <Button.Background>
-                <ImageBrush ImageSource="Images\Weiß_Punkt.jpg"/>
+                <ImageBrush ImageSource="Images\Weiß_Punkt2.jpg"/>
             </Button.Background>
         </Button>
-        
-        <Label x:Name="l_player" Content="" HorizontalAlignment="Left" Margin="123,10,0,0" VerticalAlignment="Top" Height="37" Width="214"/>
-        <Label x:Name="l_player1" Content="Player" HorizontalAlignment="Left" Margin="31,107,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="l_player2" Content="Player2" HorizontalAlignment="Left" Margin="31,151,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="b_play" Content="Play" HorizontalAlignment="Left" Margin="31,202,0,0" VerticalAlignment="Top" Width="75" Click="b_play_Click"/>
-        <Label Content="It's your turn" HorizontalAlignment="Left" Margin="31,10,0,0" VerticalAlignment="Top" Width="87"/>
 
-        <!--Image Source="Images\Weiß_Punkt.jpg" HorizontalAlignment="Left" Height="66" Margin="196,334,0,0" VerticalAlignment="Top" Width="66"/-->
+        <Label x:Name="l_player" Content="" HorizontalAlignment="Left" Margin="123,10,0,0" VerticalAlignment="Top" Height="37" Width="214" Background="#FFFDFDFD"/>
+        <Label x:Name="l_player1" Content="Player" HorizontalAlignment="Left" Margin="31,107,0,0" VerticalAlignment="Top" Width="87" Background="#FFFBF9F9" FontWeight="Bold"/>
+        <Label x:Name="l_player2" Content="Player2" HorizontalAlignment="Left" Margin="31,151,0,0" VerticalAlignment="Top" Width="87" FontWeight="Bold" Background="#FFF7EDED"/>
+        <Button x:Name="b_play" Content="Play" HorizontalAlignment="Left" Margin="21,217,0,0" VerticalAlignment="Top" Width="147" Click="b_play_Click" BorderBrush="Red" Height="51" FontFamily="Rockwell" FontSize="24">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/galaxy2.jpg"/>
+            </Button.Background>
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0.965"/>
+                    <GradientStop Color="#FFD43737" Offset="0.452"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
+        <Label Content="It's your turn" HorizontalAlignment="Left" Margin="31,10,0,0" VerticalAlignment="Top" Width="87" Background="#FFF7F6F6"/>
+
+        <!--Image Source="Images\Weiß_Punkt2.jpg" HorizontalAlignment="Left" Height="66" Margin="196,334,0,0" VerticalAlignment="Top" Width="66"/-->
         <Ellipse x:Name="ell_anim_glb" Margin="0,0,0,0" Fill="#FFFFF800" Height="46" Width="46" VerticalAlignment="Bottom" HorizontalAlignment="Left" Opacity="0"/>
         <Ellipse x:Name="ell_anim_rot" Margin="0,0,0,0" Fill="#FFDD302C" Height="46" Width="46" VerticalAlignment="Bottom" HorizontalAlignment="Left" Opacity="0"/>
-        <Button x:Name="b_s" Content="Status" HorizontalAlignment="Left" Margin="31,253,0,0" VerticalAlignment="Top" Width="75" Click="b_s_Click"/>
+        <Button x:Name="b_s" Content="Statistik" HorizontalAlignment="Left" Margin="21,316,0,0" VerticalAlignment="Top" Width="147" Click="b_s_Click" FontFamily="Rockwell" FontSize="24" Height="46" BorderBrush="#FFEDA714">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0.965"/>
+                    <GradientStop Color="#FFEDA714" Offset="0.682"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+            <Button.Background>
+                <ImageBrush ImageSource="Images/galaxy2.jpg"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="l_player_Copy" Content="by Baumgartner, Durmaz, Kouphe" HorizontalAlignment="Left" Margin="375,440,0,0" VerticalAlignment="Top" Height="30" Width="277" Foreground="#FFD43737" FontFamily="Script MT Bold" FontSize="18"/>
+        <Label x:Name="l_gewinnt" Content="4 Gewinnt" HorizontalAlignment="Left" Margin="21,31,0,0" VerticalAlignment="Top" Height="53" Width="175" FontFamily="Script MT Bold" FontSize="36" BorderBrush="#FFF91B1B">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0.967"/>
+                    <GradientStop Color="Red" Offset="0.606"/>
+                    <GradientStop Color="#FFEDA714" Offset="0.383"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
 
     </Grid>
 </Window>

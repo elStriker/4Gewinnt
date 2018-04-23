@@ -106,5 +106,16 @@
     <Resource Include="Images\Rot_Punkt.jpg" />
     <Resource Include="Images\Weiß_Punkt.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\galaxy2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\galaxy6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Gelb_Punkt2.jpg" />
+    <Resource Include="Images\Rot_Punkt2.jpg" />
+    <Resource Include="Images\Weiß_Punkt2.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
