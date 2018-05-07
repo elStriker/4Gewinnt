@@ -146,32 +146,41 @@ namespace _4G
                 {
                     l_player.Foreground = Brushes.Green;
                     l_player.Content = l_player1.Content + " hat gewonnen";
-                    string sid = $"SELECT id FROM user where username = \"{l_player1.Content}\"";
-                    string vid = $"SELECT id FROM user where username = \"{l_player2.Content}\"";
-                    string win = $"UPDATE user SET siege = siege + 1 where username = \"{l_player1.Content}\"";
-                    string lost = $"UPDATE user SET verluste = verluste + 1 where username = \"{l_player2.Content}\"";
-                    string query = $"INSERT INTO games (id, date, countsz, sieger_sid, verlierer_sid) VALUES ('', '{DateTime.Now}', '{pz}', '{sid} ', '{vid}')";
+                    string sid = $"SELECT id FROM user WHERE username = '{l_player1.Content}';";
+                    string vid = $"SELECT id FROM user WHERE username = '{l_player2.Content}';";
+                    //string vid = $"SELECT id FROM user where username = \"{l_player2.Content}\"";
                     if (OpenConnection() == true)
                     {
+                        var rsid = 0;
+                        var rvid = 0;
                         MySqlCommand cmd = new MySqlCommand(sid, conn);
                         MySqlCommand cmd1 = new MySqlCommand(vid, conn);
-                        MySqlCommand cmd2 = new MySqlCommand(win, conn);
-                        MySqlCommand cmd3 = new MySqlCommand(lost, conn);
-                        MySqlCommand cmd4 = new MySqlCommand(query, conn);
-                        try
-                        {
-                            cmd.ExecuteNonQuery();
-                            cmd1.ExecuteNonQuery();
-                            cmd2.ExecuteNonQuery();
-                            cmd3.ExecuteNonQuery();
-                            cmd4.ExecuteNonQuery();
-                            
+                        //using (MySqlDataReader dr = cmd.ExecuteReader()) { int rsid = dr }
+                        //using (MySqlDataReader dr = cmd1.ExecuteReader()) { }
+                        //cmd1.Connection = OpenConnection();
+                        cmd.CommandText = sid;
+                        rsid = (Int32)cmd.ExecuteScalar();
+                        rvid = (Int32)cmd1.ExecuteScalar();
+                        MessageBox.Show(rsid.ToString(), rvid.ToString());
+                        //int.Parse(vid);
+                        string win = $"UPDATE user SET siege = siege + 1 where username = \"{l_player1.Content}\"";
+                        string lost = $"UPDATE user SET verluste = verluste + 1 where username = \"{l_player2.Content}\"";
+                        string query = $"INSERT INTO games (id, date, countsz, sieger_sid, verlierer_sid) VALUES ('', '{DateTime.Now.ToString("yyyy-MM-dd")}', '{pz}', '{rsid}', '{rvid}')";
 
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.ToString());
-                        }
+                            MySqlCommand cmd2 = new MySqlCommand(win, conn);
+                            MySqlCommand cmd3 = new MySqlCommand(lost, conn);
+                            MySqlCommand cmd4 = new MySqlCommand(query, conn);
+                            try
+                            {
+
+                                cmd2.ExecuteNonQuery();
+                                cmd3.ExecuteNonQuery();
+                                cmd4.ExecuteNonQuery();
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.ToString());
+                            }
                     }
                 }
 
@@ -179,30 +188,36 @@ namespace _4G
                 {
                     l_player.Foreground = Brushes.Green;
                     l_player.Content = l_player2.Content + " hat gewonnen";
-                    string sid1 = $"SELECT id FROM user where username = \"{l_player2.Content}\"";
-                    string vid1 = $"SELECT id FROM user where username = \"{l_player1.Content}\"";
-                    string lost = $"UPDATE user SET verluste = verluste + 1 where username = \"{l_player1.Content}\"";
-                    string win = $"UPDATE user SET siege = siege + 1 where username = \"{l_player2.Content}\"";
-                    string query = $"INSERT INTO games (id, date, countsz, sieger_sid, verlierer_sid) VALUES ('', '{DateTime.Now}', '{pz}', '{sid1} ', '{vid1}')";
+                    string sid = $"SELECT id FROM user WHERE username = '{l_player2.Content}';";
+                    string vid = $"SELECT id FROM user WHERE username = '{l_player1.Content}';";
                     if (OpenConnection() == true)
                     {
-                        MySqlCommand cmd = new MySqlCommand(sid1, conn);
-                        MySqlCommand cmd1 = new MySqlCommand(vid1, conn);
+                        var rsid = 0;
+                        var rvid = 0;
+                        MySqlCommand cmd = new MySqlCommand(sid, conn);
+                        MySqlCommand cmd1 = new MySqlCommand(vid, conn);
+                        cmd.CommandText = sid;
+                        rsid = (Int32)cmd.ExecuteScalar();
+                        rvid = (Int32)cmd1.ExecuteScalar();
+                        MessageBox.Show(rsid.ToString(), rvid.ToString());
+                        //int.Parse(vid);
+                        string win = $"UPDATE user SET siege = siege + 1 where username = \"{l_player2.Content}\"";
+                        string lost = $"UPDATE user SET verluste = verluste + 1 where username = \"{l_player1.Content}\"";
+                        string query = $"INSERT INTO games (id, date, countsz, sieger_sid, verlierer_sid) VALUES ('', '{DateTime.Now.ToString("yyyy-MM-dd")}', '{pz}', '{rsid}', '{rvid}')";
+
                         MySqlCommand cmd2 = new MySqlCommand(win, conn);
                         MySqlCommand cmd3 = new MySqlCommand(lost, conn);
                         MySqlCommand cmd4 = new MySqlCommand(query, conn);
                         try
                         {
-                            cmd.ExecuteNonQuery();
-                            cmd1.ExecuteNonQuery();
+
                             cmd2.ExecuteNonQuery();
                             cmd3.ExecuteNonQuery();
                             cmd4.ExecuteNonQuery();
-
                         }
-                        catch (Exception)
+                        catch (Exception ex)
                         {
-
+                            MessageBox.Show(ex.ToString());
                         }
                     }
                 }
